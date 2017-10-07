@@ -1,6 +1,6 @@
 class Field() {
     private val arr: CharArray = CharArray(3000)
-    private var counter: Int = 0
+    var counter: Int = 0
 
     fun next(i: Int = 1) {
         counter += i
