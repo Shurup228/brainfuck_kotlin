@@ -1,7 +1,6 @@
 // Main interpreter file
 
 fun main(args: Array<String>) {
-    // This functions responsibilities are:
-    // Parsing command line args
-    // Starting interpretor with appropriate options
+    // TODO implement command line args parsing
+    // TODO implement invoking interpretator with appropriate options
 }
