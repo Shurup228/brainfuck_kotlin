@@ -1,12 +1,13 @@
 import java.util.LinkedList
 
 class Parser(private val toParse: String) {
-    // TODO write functions validate that will count brackets
-    fun parse(): LinkedList<Token> {
-        val tokens: LinkedList<Token> = LinkedList()
+    // TODO write code validator
+    private val tokens: LinkedList<Token> = LinkedList()
+
+    private fun preParse() {
         var lastSym = ' ' // Initializing with some trash
 
-        parsing@ for (sym in toParse) {
+        parser@ for (sym in toParse){
             val token = when (sym) {
                 '>' -> Move(1)
                 '<' -> Move(-1)
@@ -18,7 +19,7 @@ class Parser(private val toParse: String) {
                 ']' -> CloseLoop()
                 else -> { // Ignoring all other symbols
                     lastSym = sym
-                    continue@parsing
+                    continue@parser
                 }
             }
 
@@ -48,7 +49,15 @@ class Parser(private val toParse: String) {
             tokens.add(token)
             lastSym = sym
         }
+    }
 
+    private fun loopParse(): LinkedList<Token> {
+        // TODO implement this =)
+    }
+
+    fun parse(): LinkedList<Token> {
+        preParse()
+        loopParse()
         return tokens
     }
 }

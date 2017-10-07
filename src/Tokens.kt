@@ -17,9 +17,9 @@ class Print : Token()
 
 class Write : Token()
 
-class OpenLoop : Token()
-
-class CloseLoop : Token()
-
 class ChangeValue(var value: Int) : Token() // value -> how much to change the value of current cell
+
+class OpenLoop(val closeLoopIndex: Int = 0) : Token()
+
+class CloseLoop(val openLoopIndex: Int = 0) : Token()
 

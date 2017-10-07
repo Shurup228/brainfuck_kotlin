@@ -2,12 +2,8 @@ class Field() {
     private val arr: CharArray = CharArray(3000)
     var counter: Int = 0
 
-    fun next(i: Int = 1) {
+    fun move(i: Int) {
         counter += i
-    }
-
-    fun prev(i: Int = 1) {
-        counter -= i
     }
 
     fun change(i: Int) {
