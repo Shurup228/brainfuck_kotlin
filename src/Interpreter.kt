@@ -3,12 +3,11 @@ import java.util.Scanner
 
 class Interpreter(code: String) {
     private val field: Field = Field()
-    private val instructions: LinkedList<Token> = Parser(code).parse()
+    private val instructions: LinkedList<Token> = Parser(code).getTokens()
     private var index: Int = 0
     private val scanner: Scanner = Scanner(System.`in`)
 
     fun run(start: Int = 0, end: Int = instructions.size) {
-        val tempIndex: Int = index // Save our index and run
         index = start
         mainLoop@ while (index < end) {
             val instruction = instructions[index]
@@ -32,6 +31,5 @@ class Interpreter(code: String) {
             }
             index += 1
         }
-        index = tempIndex // Load index
     }
 }

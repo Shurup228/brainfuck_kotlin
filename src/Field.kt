@@ -1,4 +1,4 @@
-class Field() {
+class Field {
     private val arr: CharArray = CharArray(3000)
     var counter: Int = 0
 
