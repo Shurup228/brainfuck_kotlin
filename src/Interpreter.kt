@@ -3,7 +3,7 @@ import java.util.Scanner
 
 class Interpreter(code: String) {
     private val field: Field = Field()
-    private val instructions: LinkedList<Token> = Parser(code).getTokens()
+    private val instructions: LinkedList<Token> = Parser(code).tokens
     private var index: Int = 0
     private val scanner: Scanner = Scanner(System.`in`)
 
@@ -15,7 +15,7 @@ class Interpreter(code: String) {
                 is Move -> field.move(instruction.value)
                 is ChangeValue -> field.change(instruction.value)
                 is Print -> print(field.get())
-                is Write -> field.set(scanner.next() as Char)
+                is Write -> field.set(scanner.next()[0])
                 is OpenLoop -> {
                     if (field.get().toInt() == 0) {
                         index = instruction.closeLoopIndex + 1

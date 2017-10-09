@@ -1,13 +1,19 @@
 import java.util.LinkedList
 
+
 class Parser(private val toParse: String) {
     // TODO write code validator
-    lateinit private var tokens: LinkedList<Token>
+    var tokens: LinkedList<Token> = LinkedList()
+        get() {
+            return loopParse(optimize(parse(toParse)))
+            // Invoking optimize first, because after optimization applied
+            // tokens will be shifted
+        }
 
-    private fun parse() {
-        tokens = toParse.asSequence().filter {
+    fun parse(code: String): LinkedList<Token> {
+        return code.asSequence().filter {
             it in "-+><.,[]" // Ignoring all symbols except brainfuck instructions
-        }.map {
+        }.mapNotNullTo(LinkedList()) {
             when (it) {
                 '-' -> ChangeValue(-1)
                 '+' -> ChangeValue(1)
@@ -16,24 +22,25 @@ class Parser(private val toParse: String) {
                 '.' -> Print()
                 ',' -> Write()
                 '[' -> OpenLoop()
-                else -> CloseLoop()
+                ']' -> CloseLoop()
+                else -> null
             }
-        }.toCollection(tokens)
+        }
     }
 
     // This function merges row of same tokens in one
     // e.g. Move(1), Move(-1), Move(-1) will merge in Move(1 + (-1) + (-1))
-    private fun optimize() {
+    fun optimize(tkns: LinkedList<Token>): LinkedList<Token> {
+        return tkns.fold(LinkedList(), { acc, elem ->
+            val token = acc.pop().merge(elem) ?: elem
+            acc.add(token)
+            return acc
+        })
     }
 
-    private fun loopParse() {
+    fun loopParse(tkns: LinkedList<Token>): LinkedList<Token> {
         // TODO this too -_-
+        return tkns
     }
 
-    fun getTokens(): LinkedList<Token> {
-        parse()
-        optimize() // Invoking optimize first, because after optimization applied
-        loopParse() // tokens will be shifted
-        return tokens
-    }
 }
