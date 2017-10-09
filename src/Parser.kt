@@ -32,6 +32,10 @@ class Parser(private val toParse: String) {
     // e.g. Move(1), Move(-1), Move(-1) will merge in Move(1 + (-1) + (-1))
     fun optimize(tkns: LinkedList<Token>): LinkedList<Token> {
         return tkns.fold(LinkedList(), { acc, elem ->
+            if (acc.size == 0) {
+                acc.add(elem)
+                return acc
+            }
             val token = acc.pop().merge(elem) ?: elem
             acc.add(token)
             return acc

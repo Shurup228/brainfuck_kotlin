@@ -19,6 +19,13 @@ internal class ParserTest {
 
     @Test
     fun optimize() {
+        val code = "++---.>>>"
+        val parser = Parser(code)
+        val tokens: LinkedList<Token> = parser.optimize(parser.parse(code))
+        val expectedTokens: LinkedList<Token> = arrayOf(
+                ChangeValue(-1), Print(), Move(3)
+        ).toCollection(LinkedList())
+        assertEquals(tokens.forEach { it::class }, expectedTokens.forEach { it::class })
     }
 
     @Test
