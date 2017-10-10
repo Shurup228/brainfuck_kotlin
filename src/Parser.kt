@@ -41,18 +41,19 @@ class Parser(private val toParse: String) {
     }
 
     fun loopParse(tkns: LinkedList<Token>): LinkedList<Token> {
-        val temp = tkns.filterIndexedTo(LinkedList()) { index, token ->
+        val stack = LinkedList<Token>()
+        tkns.filterIndexed { index, token ->
             token.index = index
-            if (token is OpenLoop || token is CloseLoop) {
-                true
+            token is OpenLoop || token is CloseLoop
+        }.map {
+            if (it is OpenLoop)
+                stack.push(it)
+            else {
+                val open = stack.pop() as OpenLoop
+                val close = it as CloseLoop
+                open.closeLoopIndex = close.index
+                close.openLoopIndex = open.index
             }
-            false
-        }
-        for (x in 1..(temp.size / 2)) { // We always have even number of brackets(because of validator)
-            val first = temp.removeFirst() as OpenLoop // always OpenLoop
-            val last = temp.pop() as CloseLoop // always CloseLoop
-            first.closeLoopIndex = last.index
-            last.openLoopIndex = first.index
         }
         return tkns
     }
