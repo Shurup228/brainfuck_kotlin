@@ -31,13 +31,11 @@ class Parser(private val toParse: String) {
     // This function merges row of same tokens in one
     // e.g. Move(1), Move(-1), Move(-1) will merge in Move(1 + (-1) + (-1))
     fun optimize(tkns: LinkedList<Token>): LinkedList<Token> {
-        return tkns.fold(LinkedList(), { acc, elem ->
-            if (acc.size == 0) {
-                acc.add(elem)
-                return acc
-            }
-            val token = acc.pop().merge(elem) ?: elem
-            acc.add(token)
+        val res: LinkedList<Token> = LinkedList() // Getting rid of
+        res.add(tkns.removeFirst()) // if check for empty acc
+        return tkns.fold(res, { acc, elem ->
+            val token = acc.pop().merge(elem) ?: elem // Pop here may throw exception
+            acc.add(token) // If acc empty
             return acc
         })
     }

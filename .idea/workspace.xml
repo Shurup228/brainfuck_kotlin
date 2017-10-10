@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="886f3ac3-0431-4314-9a68-d5f31d0f8684" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/brainfuck/ParserTest.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/FieldTest.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/brainfuck/Field.class" afterPath="$PROJECT_DIR$/out/production/brainfuck/Field.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/brainfuck/Interpreter.class" afterPath="$PROJECT_DIR$/out/production/brainfuck/Interpreter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/brainfuck/Parser.class" afterPath="$PROJECT_DIR$/out/production/brainfuck/Parser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Field.kt" afterPath="$PROJECT_DIR$/src/Field.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpreter.kt" afterPath="$PROJECT_DIR$/src/Interpreter.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser.kt" afterPath="$PROJECT_DIR$/src/Parser.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ParserTest.kt" afterPath="$PROJECT_DIR$/tests/ParserTest.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tokens.kt" afterPath="$PROJECT_DIR$/src/Tokens.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,21 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Field.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Field.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Interpreter.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Interpreter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="187">
+              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -49,11 +44,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Field.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Field.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Parser.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Parser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="457">
+              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -62,8 +67,8 @@
       <file leaf-file-name="Tokens.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tokens.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+            <state relative-caret-position="162">
+              <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -72,11 +77,21 @@
       <file leaf-file-name="ParserTest.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/ParserTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+            <state relative-caret-position="263">
+              <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
               <folding>
                 <element signature="e#0#103#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/FieldTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,14 +132,15 @@
         <option value="$PROJECT_DIR$/test/test.kt" />
         <option value="$PROJECT_DIR$/src/Main.kt" />
         <option value="$PROJECT_DIR$/src/Token.kt" />
-        <option value="$PROJECT_DIR$/src/Field.kt" />
         <option value="$PROJECT_DIR$/src/Tests.kt" />
-        <option value="$PROJECT_DIR$/src/Interpreter.kt" />
         <option value="$PROJECT_DIR$/tests/ParserTests.kt" />
         <option value="$PROJECT_DIR$/tests/BasicParsingTest.kt" />
-        <option value="$PROJECT_DIR$/src/Tokens.kt" />
         <option value="$PROJECT_DIR$/tests/ParserTest.kt" />
         <option value="$PROJECT_DIR$/src/Parser.kt" />
+        <option value="$PROJECT_DIR$/src/Tokens.kt" />
+        <option value="$PROJECT_DIR$/src/Interpreter.kt" />
+        <option value="$PROJECT_DIR$/src/Field.kt" />
+        <option value="$PROJECT_DIR$/tests/FieldTest.kt" />
       </list>
     </option>
   </component>
@@ -161,10 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,6 +198,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,7 +239,45 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParserTest.optimize">
+  <component name="RunManager" selected="JUnit.FieldTest.move">
+    <configuration name="FieldTest.change" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="brainfuck" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="METHOD_NAME" value="change" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="FieldTest.move" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="brainfuck" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="METHOD_NAME" value="move" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="ParserTest.optimize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="brainfuck" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -317,14 +371,18 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ParserTest.parse" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ParserTest.optimize" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FieldTest.move" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.FieldTest.change" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ParserTest.optimize" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ParserTest.parse" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FieldTest.move" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FieldTest.change" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ParserTest.optimize" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ParserTest.parse" />
       </list>
     </recent_temporary>
   </component>
@@ -335,10 +393,25 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParserTest_optimize - 2017.10.09 at 23h 47m 29s.xml">
-      <configuration name="ParserTest.optimize" configurationId="JUnit" />
+    <history-entry file="FieldTest_change - 2017.10.10 at 13h 06m 09s.xml">
+      <configuration name="FieldTest.change" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FieldTest_change - 2017.10.10 at 13h 06m 34s.xml">
+      <configuration name="FieldTest.change" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FieldTest_change - 2017.10.10 at 13h 06m 51s.xml">
+      <configuration name="FieldTest.change" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FieldTest_move - 2017.10.10 at 13h 06m 03s.xml">
+      <configuration name="FieldTest.move" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FieldTest_move - 2017.10.10 at 13h 07m 33s.xml">
+      <configuration name="FieldTest.move" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ParserTest_optimize - 2017.10.09 at 23h 57m 31s.xml">
+      <configuration name="ParserTest.optimize" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest_optimize - 2017.10.10 at 12h 50m 55s.xml">
       <configuration name="ParserTest.optimize" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ParserTest_parse - 2017.10.09 at 20h 49m 51s.xml">
@@ -362,8 +435,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -423,16 +496,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Interpreter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -757,22 +820,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/test.kt" />
     <entry file="file://$PROJECT_DIR$/src/Token.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Field.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/ParserTests.kt" />
     <entry file="file://$PROJECT_DIR$/tests/BasicParsingTest.kt" />
     <entry file="file://$PROJECT_DIR$/brainfuck.iml">
@@ -784,36 +831,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tokens.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="36" lean-forward="false" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state relative-caret-position="162">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpreter.kt">
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/ParserTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state relative-caret-position="263">
+          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
             <element signature="e#0#103#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/FieldTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interpreter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Field.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="457">
+          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding />
         </state>
       </provider>

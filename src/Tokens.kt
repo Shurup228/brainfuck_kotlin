@@ -1,13 +1,13 @@
 /*
-Tokens represents code units from brainfuck e.g.
-Move -> >, <
-Print -> .
-Write -> ,
-OpenLoop -> [
-CloseLoop -> ]
-ChangeValue -> +, -
+    Tokens represents code units from brainfuck e.g.
+        Move -> >, <
+        Print -> .
+        Write -> ,
+        OpenLoop -> [
+        CloseLoop -> ]
+        ChangeValue -> +, -
 
-Tokens implemented in order(and only) to use benefits of type system of kotlin.
+    Tokens implemented in order(and only) to use benefits of Kotlin type system.
 */
 abstract class Token {
     open fun merge(toMerge: Token): Token? {

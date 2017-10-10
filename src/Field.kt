@@ -4,6 +4,10 @@ class Field {
 
     fun move(i: Int) {
         counter += i
+        if (counter < 0)
+            counter = 0
+        else if (counter > arr.size)
+            counter = arr.size
     }
 
     fun change(i: Int) {

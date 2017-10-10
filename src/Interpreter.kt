@@ -9,7 +9,7 @@ class Interpreter(code: String) {
 
     fun run(start: Int = 0, end: Int = instructions.size) {
         index = start
-        mainLoop@ while (index < end) {
+        while (index < end) {
             val instruction = instructions[index]
             when (instruction) {
                 is Move -> field.move(instruction.value)
@@ -18,14 +18,14 @@ class Interpreter(code: String) {
                 is Write -> field.set(scanner.next()[0])
                 is OpenLoop -> {
                     if (field.get().toInt() == 0) {
-                        index = instruction.closeLoopIndex + 1
+                        index = instruction.closeLoopIndex
                     } else {
                         run(index + 1, instruction.closeLoopIndex)
                     }
                 }
                 is CloseLoop -> {
                     if (field.get().toInt() != 0) {
-                        index = instruction.openLoopIndex
+                        index = instruction.openLoopIndex - 1
                     }
                 }
             }
