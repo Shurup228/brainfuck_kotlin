@@ -1,6 +1,13 @@
-// Main interpreter file
+import java.io.File
+
 
 fun main(args: Array<String>) {
-    // TODO implement command line args parsing
-    // TODO implement invoking interpretator with appropriate options
+    if (args[0] in "--help") {
+        println("Usage:\n\t-h, --help - print this message\n\tfile - file with brainfuck programm")
+        return
+    }
+
+    val prog = File(args[0]).readText()
+    Interpreter(prog).run()
+
 }

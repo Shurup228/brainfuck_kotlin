@@ -9,7 +9,7 @@
 
     Tokens implemented in order(and only) to use benefits of Kotlin type system.
 */
-abstract class Token(var index:Int = 0) {
+abstract class Token(open var index: Int = 0) {
     open fun merge(toMerge: Token): Token? {
         return null
     }
@@ -39,6 +39,6 @@ data class ChangeValue(val value: Int) : Token() {
     }
 }
 
-data class OpenLoop(var index, var closeLoopIndex: Int = 0) : Token(index)
+data class OpenLoop(override var index: Int = 0, var closeLoopIndex: Int = 0) : Token(index)
 
-data class CloseLoop(index: Int, var openLoopIndex: Int = 0) : Token(index)
+data class CloseLoop(override var index: Int = 0, var openLoopIndex: Int = 0) : Token(index)
