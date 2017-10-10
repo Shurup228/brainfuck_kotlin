@@ -9,13 +9,13 @@
 
     Tokens implemented in order(and only) to use benefits of Kotlin type system.
 */
-abstract class Token {
+abstract class Token(var index:Int = 0) {
     open fun merge(toMerge: Token): Token? {
         return null
     }
 }
 
-class Move(val value: Int) : Token() {
+data class Move(val value: Int) : Token() {
     // value -> how many cells to skip
     override fun merge(toMerge: Token): Move? {
         if (toMerge is Move) {
@@ -25,11 +25,11 @@ class Move(val value: Int) : Token() {
     }
 }
 
-class Print : Token() // value -> nothing because we don't have any values at compile time
+object Print : Token() // value -> nothing because we don't have any values at compile time
 
-class Write : Token() // value -> same here
+object Write : Token() // value -> same here
 
-class ChangeValue(val value: Int) : Token() {
+data class ChangeValue(val value: Int) : Token() {
     // value -> how much to change the value of current cell
     override fun merge(toMerge: Token): Token? {
         if (toMerge is ChangeValue) {
@@ -39,6 +39,6 @@ class ChangeValue(val value: Int) : Token() {
     }
 }
 
-class OpenLoop(val closeLoopIndex: Int = 0) : Token()
+data class OpenLoop(var index, var closeLoopIndex: Int = 0) : Token(index)
 
-class CloseLoop(val openLoopIndex: Int = 0) : Token()
+data class CloseLoop(index: Int, var openLoopIndex: Int = 0) : Token(index)

@@ -10,21 +10,17 @@ class Parser(private val toParse: String) {
             // tokens will be shifted
         }
 
-    fun parse(code: String): LinkedList<Token> {
-        return code.asSequence().filter {
-            it in "-+><.,[]" // Ignoring all symbols except brainfuck instructions
-        }.mapNotNullTo(LinkedList()) {
-            when (it) {
-                '-' -> ChangeValue(-1)
-                '+' -> ChangeValue(1)
-                '>' -> Move(1)
-                '<' -> Move(-1)
-                '.' -> Print()
-                ',' -> Write()
-                '[' -> OpenLoop()
-                ']' -> CloseLoop()
-                else -> null
-            }
+    fun parse(code: String): LinkedList<Token> = code.mapNotNullTo(LinkedList()) {
+        when (it) {
+            '-' -> ChangeValue(-1)
+            '+' -> ChangeValue(1)
+            '>' -> Move(1)
+            '<' -> Move(-1)
+            '.' -> Print
+            ',' -> Write
+            '[' -> OpenLoop()
+            ']' -> CloseLoop()
+            else -> null
         }
     }
 
@@ -33,15 +29,25 @@ class Parser(private val toParse: String) {
     fun optimize(tkns: LinkedList<Token>): LinkedList<Token> {
         val res: LinkedList<Token> = LinkedList() // Getting rid of
         res.add(tkns.removeFirst()) // if check for empty acc
-        return tkns.fold(res, { acc, elem ->
-            val token = acc.pop().merge(elem) ?: elem // Pop here may throw exception
-            acc.add(token) // If acc empty
-            return acc
-        })
+        return tkns.fold(res) { acc, elem ->
+            val merged = acc.last.merge(elem)
+            if (merged != null) {
+                acc[acc.lastIndex] = merged
+            } else {
+                acc.add(elem)
+            }
+            acc
+        }
     }
 
     fun loopParse(tkns: LinkedList<Token>): LinkedList<Token> {
-        // TODO this too -_-
+        tkns.filterIndexed { index, token ->
+            if (token is OpenLoop || token is CloseLoop) {
+                token.index = index
+                true
+            }
+            false
+        }.map {}
         return tkns
     }
 

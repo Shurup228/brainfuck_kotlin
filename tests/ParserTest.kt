@@ -8,24 +8,24 @@ internal class ParserTest {
     fun parse() {
         val code = "< > + - [ ] , ."
         val parser = Parser(code)
-        val tokens: LinkedList<Token> = parser.parse(code)
-        val expectedTokens: LinkedList<Token> = arrayOf(
+        val tokens = parser.parse(code)
+        val expectedTokens = arrayOf(
                 Move(-1), Move(1), ChangeValue(1),
                 ChangeValue(-1), OpenLoop(),
-                CloseLoop(), Write(), Print()
+                CloseLoop(), Write, Print
         ).toCollection(LinkedList())
-        assertEquals(tokens.forEach { it::class }, expectedTokens.forEach { it::class })
+        assertEquals(tokens, expectedTokens)
     }
 
     @Test
     fun optimize() {
         val code = "++---.>>>"
         val parser = Parser(code)
-        val tokens: LinkedList<Token> = parser.optimize(parser.parse(code))
-        val expectedTokens: LinkedList<Token> = arrayOf(
-                ChangeValue(-1), Print(), Move(3)
+        val tokens = parser.optimize(parser.parse(code))
+        val expectedTokens = arrayOf(
+                ChangeValue(-1), Print, Move(3)
         ).toCollection(LinkedList())
-        assertEquals(tokens.forEach { it::class }, expectedTokens.forEach { it::class })
+        assertEquals(expectedTokens, tokens)
     }
 
     @Test
