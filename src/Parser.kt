@@ -24,6 +24,7 @@ class Parser(private val toParse: String) {
         }
     }
 
+    // Basic optimisation
     // This function merges row of same tokens in one
     // e.g. Move(1), Move(-1), Move(-1) will merge in Move(1 + (-1) + (-1))
     fun optimize(tkns: LinkedList<Token>): LinkedList<Token> {
@@ -41,7 +42,7 @@ class Parser(private val toParse: String) {
     }
 
     fun loopParse(tkns: LinkedList<Token>): LinkedList<Token> {
-        val stack = LinkedList<Token>()
+        val stack = LinkedList<OpenLoop>()
         tkns.filterIndexed { index, token ->
             token.index = index
             token is OpenLoop || token is CloseLoop
@@ -49,7 +50,7 @@ class Parser(private val toParse: String) {
             if (it is OpenLoop)
                 stack.push(it)
             else {
-                val open = stack.pop() as OpenLoop
+                val open = stack.pop()
                 val close = it as CloseLoop
                 open.closeLoopIndex = close.index
                 close.openLoopIndex = open.index

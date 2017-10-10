@@ -15,8 +15,8 @@ internal class FieldTest {
     @Test
     fun change() {
         field.change(20)
-        assertEquals(20, field.get().toInt())
+        assertEquals(20, field.current.toInt())
         field.change(-25)
-        assertEquals(65531, field.get().toInt())
+        assertEquals(65531, field.current.toInt())
     }
 }

@@ -7,24 +7,24 @@ class Interpreter(code: String) {
     private var index: Int = 0
     private val scanner: Scanner = Scanner(System.`in`)
 
-    fun run(start: Int = 0, end: Int = instructions.size) {
+    fun run(start: Int = 0, end: Int = instructions.lastIndex) {
         index = start
-        while (index < end) {
+        while (index <= end) {
             val instruction = instructions[index]
             when (instruction) {
                 is Move -> field.move(instruction.value)
                 is ChangeValue -> field.change(instruction.value)
-                is Print -> print(field.get())
-                is Write -> field.set(scanner.next()[0])
+                is Print -> print(field.current)
+                is Write -> field.current = scanner.next()[0]
                 is OpenLoop -> {
-                    if (field.get().toInt() == 0) {
+                    if (field.current.toInt() == 0) {
                         index = instruction.closeLoopIndex
                     } else {
                         run(index + 1, instruction.closeLoopIndex)
                     }
                 }
                 is CloseLoop -> {
-                    if (field.get().toInt() != 0) {
+                    if (field.current.toInt() != 0) {
                         index = instruction.openLoopIndex - 1
                     }
                 }

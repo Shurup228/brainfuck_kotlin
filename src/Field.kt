@@ -1,6 +1,13 @@
 class Field {
     private val arr: CharArray = CharArray(3000)
     var counter: Int = 0
+    var current: Char
+        get(): Char {
+            return arr[counter]
+        }
+        set(value) {
+            arr[counter] = value
+        }
 
     fun move(i: Int) {
         counter += i
@@ -14,11 +21,4 @@ class Field {
         arr[counter] = (arr[counter] + i)
     }
 
-    fun get(): Char {
-        return arr[counter]
-    }
-
-    fun set(value: Char) {
-        arr[counter] = value
-    }
 }
