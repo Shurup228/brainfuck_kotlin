@@ -20,9 +20,10 @@ class Interpreter(code: String) {
                     if (field.current.toInt() == 0) {
                         index = instruction.closeLoopIndex
                     } else {
-                        run(index + 1, instruction.closeLoopIndex)
-                    }
-                }
+                        run(index + 1, instruction.closeLoopIndex - 1) // if we don't substract 1
+                        index -= 1 // from that value, run will go into recursion and then add to index
+                    } // number of loops it encounter and we need to substract from index, so that
+                } // it won't pass one instruction right after the CloseLoop token
                 is CloseLoop -> {
                     if (field.current.toInt() != 0) {
                         index = instruction.openLoopIndex - 1

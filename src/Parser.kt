@@ -46,7 +46,7 @@ class Parser(private val toParse: String) {
         tkns.filterIndexed { index, token ->
             token.index = index
             token is OpenLoop || token is CloseLoop
-        }.map {
+        }.forEach {
             if (it is OpenLoop)
                 stack.push(it)
             else {
