@@ -1,13 +1,25 @@
 import java.io.File
+import java.util.Scanner
 
 
 fun main(args: Array<String>) {
-    if (args[0] in "--help") {
-        println("Usage:\n\t-h, --help - print this message\n\tfile - file with brainfuck programm")
-        return
+    val progsDir = File("progs")
+    val progs: MutableMap<String, File> = mutableMapOf()
+    val scanner = Scanner(System.`in`)
+
+    for (prog in progsDir.listFiles()) {
+        progs[prog.name.split(".")[0]] = prog
     }
 
-    val prog = File(args[0]).readText()
-    Interpreter(prog).run()
+    // List available programs
+    println("Choose program to run:")
+    for ((k, _) in progs) {
+        println("\t$k")
+    }
+    val choose = scanner.next()
+    val prog = progs[choose]?.readText()
+    prog?.let {
+        Interpreter(prog).run()
+    }
 
 }
