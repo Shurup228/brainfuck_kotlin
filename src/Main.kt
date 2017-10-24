@@ -17,9 +17,8 @@ fun main(args: Array<String>) {
         println("\t$k")
     }
     val choose = scanner.next()
-    val prog = progs[choose]?.readText()
-    prog?.let {
-        Interpreter(prog).run()
+    progs[choose]?.readText()?.let {
+        Interpreter(it).run()
     }
 
 }

@@ -12,10 +12,10 @@ class Interpreter(code: String) {
         while (index <= end) {
             val instruction = instructions[index]
             when (instruction) {
+                Print -> print(field.current)
+                Write -> field.current = scanner.next()[0]
                 is Move -> field.move(instruction.value)
                 is ChangeValue -> field.change(instruction.value)
-                is Print -> print(field.current)
-                is Write -> field.current = scanner.next()[0]
                 is OpenLoop -> {
                     if (field.current.toInt() == 0) {
                         index = instruction.closeLoopIndex
